@@ -58,7 +58,7 @@
     {{-- Meu menu --}}
 
     <div class="container mt-2 mb-4">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-gray-400">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ route('products.index') }}">Produtos</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

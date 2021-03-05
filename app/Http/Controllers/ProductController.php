@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use DB;
 
 class ProductController extends Controller
 {
@@ -12,10 +13,19 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest()->paginate(5);
-
+        //dd($request->query('q'));
+        $name = $request->query('name');
+        if($name != null)
+        {
+            $products = DB::table('products')                          
+            ->where('name' , 'like', '%'.$name.'%')
+            ->paginate(5);  
+        } else{
+            $products = Product::latest()->paginate(5);
+        }
+        
         return view('products.index', compact('products'))
             ->with('i', (request()->input('page', 1) -1) *5);
     }
@@ -108,5 +118,10 @@ class ProductController extends Controller
             ->with('sucesso', 'Produto excluido com sucesso!');
     }
 
-   
+    public function productSearch(Request $request)
+    {
+        $query = $request->name; 
+        return redirect('search/'.$query);
+    }
+       
 }
