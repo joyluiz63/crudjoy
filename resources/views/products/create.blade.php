@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <div>
+    <div class="container bg-indigo-100">
         <form action="{{route('products.store')}}" method="POST" >
             @csrf
 
@@ -42,7 +42,11 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <div class="ml-96">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
 
+        </form>
+    </div>
            
 @endsection

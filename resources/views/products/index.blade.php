@@ -2,10 +2,10 @@
 @section('title', 'Produtos')
 @section('content')
     
-
+{{-- 
     <div class="container">
         <a href="{{route('products.create')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
-    </div>
+    </div> --}}
 
     <div class="container">
 

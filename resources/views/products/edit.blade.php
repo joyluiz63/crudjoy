@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <div>
+    <div class="container bg-indigo-100">
         <form action="{{route('products.update', $product->id)}}" method="POST" >
             @csrf
             @method('put')
@@ -38,8 +38,10 @@
                   <input type="number" class="form-control" name="price" id="price" value="{{$product->price}}">
                 </div>
             </div>
-
-            <button type="submit" class="btn btn-primary">Salvar</button>
-
+            <div class="ml-96">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+        </form>
+    </div>
            
 @endsection
