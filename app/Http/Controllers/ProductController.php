@@ -19,13 +19,13 @@ class ProductController extends Controller
         $name = $request->query('name');
         if($name != null)
         {
-            $products = DB::table('products')                          
+            $products = DB::table('products')
             ->where('name' , 'like', '%'.$name.'%')
-            ->paginate(5);  
+            ->paginate(5);
         } else{
             $products = Product::latest()->paginate(5);
         }
-        
+
         return view('products.index', compact('products'))
             ->with('i', (request()->input('page', 1) -1) *5);
     }
@@ -116,12 +116,6 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')
             ->with('sucesso', 'Produto excluido com sucesso!');
-    }
-
-    public function productSearch(Request $request)
-    {
-        $query = $request->name; 
-        return redirect('search/'.$query);
     }
        
 }
