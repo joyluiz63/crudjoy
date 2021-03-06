@@ -15,14 +15,6 @@
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
     <title>@yield('title') </title>
-
-    <link href="{{ URL::asset('assets/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
-
-
-    <!-- Scripts DataTables -->
-    <script src="{{ URL::asset('assets/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/datatables/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/datatables/datatables-demo.js') }}"></script>
 </head>
 
 <body>
@@ -58,9 +50,9 @@
     {{-- Meu menu --}}
 
     <div class="container mt-2 mb-4">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-gray-400">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ route('products.index') }}">Produtos</a>
+                <a href="{{ route('products.index') }}" class="navbar-brand" >Produtos</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">

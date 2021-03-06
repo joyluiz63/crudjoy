@@ -48,7 +48,7 @@
                                 @csrf
                                 @method('DELETE')
     
-                                <button type="submit" title="Excluir o Produto" style="border:none background-color:transparent">
+                                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir o produto {{$product->name}}?')" title="Excluir o Produto" style="border:none background-color:transparent">
                                     <i class="fas fa-trash fa-lg text-danger mr-1"></i>
                                 </button>
                             </form>
@@ -63,5 +63,9 @@
         {!! $products->links() !!}
 
     </div>
+
+    {{-- Modal Excluir Registros --}}
+    
+      
 
 @endsection
