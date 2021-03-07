@@ -1,4 +1,5 @@
-Este CRUD foi criado para server de base para uma nova aplicação. Para pessoas que como eu, tem a programação como um Hobby e, as vezes, por passar muito tempo sem programar, acaba esquecendo o básico.
+Este CRUD foi criado para servir de base para uma nova aplicação. 
+Para pessoas que como eu, tem a programação como um Hobby e, as vezes, por passar muito tempo sem programar, acaba esquecendo o básico.
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
