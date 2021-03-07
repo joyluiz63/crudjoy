@@ -2,6 +2,10 @@
 @section('title', 'Produtos')
 @section('content')
     
+    <div class="container">
+        <a href="{{route('products.create')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
+    </div>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Alerta!</strong> 

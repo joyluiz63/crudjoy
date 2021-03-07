@@ -5,23 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Cliente;
-use App\Models\Venda;
+use App\Models\Product;
 
-class Product extends Model
+class Venda extends Model
 {
     use HasFactory;
 
-    protected $table = 'products';
+    protected $table = 'vendas';
     public $timestamps = true;
 
-    protected $casts =[
-        'price' => 'float'
-    ];
-
     protected $fillable =[
-        'name',
-        'description',
-        'price',
+        'data',
+        'quantidade',
+        'product_id',
         'created_at'
     ];
 

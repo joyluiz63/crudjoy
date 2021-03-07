@@ -15,10 +15,19 @@ class ClienteController extends Controller
      */
     public function index(Request $request)
     {
-        $clientes = Cliente::latest()->paginate(5);
+        //dd($request->query('q'));
+        $nome = $request->query('nome');
+        if($nome != null)
+        {
+            $clientes = DB::table('clientes')
+            ->where('nome' , 'like', '%'.$nome.'%')
+            ->paginate(5);
+        } else{
+            $clientes = Cliente::latest()->paginate(5);
+        }
 
         return view('clientes.index', compact('clientes'))
-            ->with('i', (request()->input('page', 1) -1) *5);    
+            ->with('i', (request()->input('page', 1) -1) *5);
     }
 
     /**

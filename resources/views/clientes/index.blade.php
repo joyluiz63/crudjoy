@@ -12,7 +12,7 @@
 
         <form action="{{route('clientes.index')}} ">
             <label for="busca">Buscar Cliente</label>
-            <input type="search" id="busca" name="name" class="border">
+            <input type="search" id="busca" name="nome" class="border">
             <button type="submit" class="btn btn-outline-secondary">OK</button>
           </form>
     
@@ -46,7 +46,7 @@
                                 @csrf
                                 @method('DELETE')
     
-                                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir o cliente {{$cliente->name}}?')" title="Excluir o Cliente" style="border:none background-color:transparent">
+                                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir o cliente {{$cliente->nome}}?')" title="Excluir o Cliente" style="border:none background-color:transparent">
                                     <i class="fas fa-trash fa-lg text-danger mr-1"></i>
                                 </button>
                             </form>

@@ -14,35 +14,34 @@
     @endif
 
     <div class="container bg-indigo-100">
-        <form action="{{route('products.store')}}" method="POST" >
+        <form action="{{route('products.update', $product->id)}}" method="POST" >
             @csrf
+            @method('put')
 
             <div class="row mb-3">
                 <label for="name" class="col-sm-2 col-form-label">Nome</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="name" id="name">
+                  <input type="text" class="form-control" name="name" id="name" value="{{$product->name}}">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="description" class="col-sm-2 col-form-label">Descrição</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="description" id="description">
+                  <input type="text" class="form-control" name="description" id="description" value="{{$product->description}}">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="price" class="col-sm-2 col-form-label">Preço</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" name="price" id="price">
+                  <input type="number" class="form-control" name="price" id="price" value="{{$product->price}}">
                 </div>
             </div>
-
             <div class="ml-96">
                 <button type="submit" class="btn btn-primary">Salvar</button>
             </div>
-
         </form>
     </div>
-           
+
 @endsection

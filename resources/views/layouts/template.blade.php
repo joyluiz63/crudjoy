@@ -15,101 +15,11 @@
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
     <title>@yield('title') </title>
+
 </head>
 
 <body>
-
-    {{-- Menu dashboard do user breeze 
-        <div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8">
-            <div class="absolute top-0 right-0 mt-4 mr-4">
-                @if (Route::has('login'))
-                    <div class="space-x-4">
-                        @auth
-                            <a
-                                href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                            >
-                                Log out
-                            </a>
-        
-                            
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        @else
-                            <a href="{{ route('login') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
-        
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Register</a>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
-            </div> --}}
-    {{-- Meu menu --}}
-
-    <div class="container mt-2 mb-4">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-            <div class="container-fluid">
-                <a href="{{ route('products.index') }}" class="navbar-brand" >Produtos</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('products.create') }}">Novo
-                                Produto</a>
-                        </li>
-                        <a href="{{ route('clientes.index') }}" class="navbar-brand" >Clientes</a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('clientes.create') }}">Novo
-                                Cliente</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                    @if (Route::has('login'))
-                        <div class="space-x-4">
-                            <div class="text-white">{{ Auth::user()->name }}</div>
-                            @auth
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                    class="font-medium text-white hover:text-indigo-200 focus:outline-none focus:underline transition ease-in-out duration-150">
-                                    Log out
-                                </a>
-
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            @else
-                                <a href="{{ route('login') }}"
-                                    class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Log
-                                    in</a>
-
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}"
-                                        class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Register</a>
-                                @endif
-                            @endauth
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </nav>
-    </div>
+    @include('layouts.menu')
     @yield('content')
 </body>
 
